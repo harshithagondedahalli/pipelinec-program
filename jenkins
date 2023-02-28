@@ -1,0 +1,12 @@
+pipeline{
+  agent any 
+    stages ( 'BUILD' ) {
+              stage {
+                steps {
+                 sh '''
+                    cd /var/lib/jenkins/workspace/pipelinec-program
+                    make ABC.exe
+                    }
+                 }
+             }
+         }
