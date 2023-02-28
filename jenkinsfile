@@ -9,5 +9,27 @@ pipeline {
                     '''
                     }
                  }
-             }
+                  stage ( 'pipeline-test' ) {
+                steps {
+                 sh '''
+                    echo "$$"
+                    '''
+                    }
+                 }
+             
+             stage ( 'pipeline-deploy' ) {
+                steps {
+                 sh '''
+                    pwd
+                    '''
+                    }
+                 }
+                  stage ( 'pipeline-build' ) {
+                steps {
+                 sh '''
+                    echo "$?"
+                    '''
+                    }
+                 }
+            }
          }
