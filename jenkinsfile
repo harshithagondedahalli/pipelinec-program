@@ -19,7 +19,7 @@ pipeline {
                   stage ( 'pipeline-test' ) {
                 steps {
                  sh '''
-                    echo "$$"
+                    echo "$!"
                     '''
                     }
                  }
