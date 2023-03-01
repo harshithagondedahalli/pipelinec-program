@@ -1,20 +1,13 @@
 pipeline {
   agent none
-  
-  parameters {
-  string defaultValue: 'main', name: 'supergirl', trim: true
-}
-  environment {
-  harsh = "supergirl"
-              }
-
+ 
     stages {
     stage ( 'BUILD' ) {
             agent { label 'masterkeynode' }
                 steps {
-                 sh '''
-                                
-                    echo " harsh is $harsh"
+                 sh '''       
+                    cd /var/lib/jenkins/workspace/pipeline_jenkins
+                    make ABC.exe
                     '''
                     }
                  }
