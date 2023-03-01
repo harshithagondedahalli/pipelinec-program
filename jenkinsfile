@@ -5,7 +5,7 @@ pipeline {
             agent { label 'masterkeynode' }
                 steps {
                  sh '''
-                    cd /var/lib/jenkins/workspace/pipeline_jenkins
+                    cd /home/ec2-user/workspace/agentjobpipe
                     make ABC.exe
                     '''
                     }
