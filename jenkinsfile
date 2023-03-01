@@ -10,5 +10,39 @@ pipeline {
                     '''
                     }
                  }
+               stage ( 'TEST' ) {
+                  agent { label 'node1-cproject' }
+                steps {
+                 sh '''
+                    echo "$$"
+                    '''
+                    }
+                 }
+                  stage ( 'pipeline-test' ) {
+                     agent { label 'masterkeynode' }
+                steps {
+                 sh '''
+                    echo "$!"
+                    '''
+                    }
+                 }
+             
+             stage ( 'pipeline-deploy' ) {
+                agent { label 'node1-cproject' }
+                steps {
+                 sh '''
+                    pwd
+                    '''
+                    }
+                 }
+                  stage ( 'pipeline-build' ) {
+                     agent { label 'node1-cproject' }
+                steps {
+                 sh '''
+                    echo "$?"
+                    '''
+                    }
+                 }
             }
-        }
+         }
+
