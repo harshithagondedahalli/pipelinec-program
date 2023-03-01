@@ -1,5 +1,13 @@
 pipeline {
   agent none
+  
+  parameters {
+  string defaultValue: 'main', name: 'supergirl', trim: true
+}
+  environment {
+  harsh = "supergirl"
+              }
+
     stages {
     stage ( 'BUILD' ) {
             agent { label 'masterkeynode' }
@@ -7,6 +15,8 @@ pipeline {
                  sh '''
                     cd /home/ec2-user/workspace/agentjobpipe
                     make ABC.exe
+                    
+                    echo " harsh is $harsh"
                     '''
                     }
                  }
