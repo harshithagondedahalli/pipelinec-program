@@ -13,9 +13,7 @@ pipeline {
             agent { label 'masterkeynode' }
                 steps {
                  sh '''
-                    cd /home/ec2-user/workspace/agentjobpipe
-                    make ABC.exe
-                    
+                                
                     echo " harsh is $harsh"
                     '''
                     }
