@@ -18,6 +18,7 @@ pipeline {
                  sh '''       
                     cd /home/ec2-user/workspace/agentjobpipe
                     make ABC.exe
+                    echo "$harsh"
                     '''
                     }
                  }
