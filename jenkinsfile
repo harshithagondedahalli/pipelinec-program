@@ -1,6 +1,16 @@
 pipeline {
   agent none
- 
+  
+/*   parameters {
+  string defaultValue: 'main', name: 'supergirl', trim: true
+} */
+  
+  environment {
+  harsh = "supergirl"
+              }
+
+
+
     stages {
     stage ( 'BUILD' ) {
             agent { label 'masterkeynode' }
